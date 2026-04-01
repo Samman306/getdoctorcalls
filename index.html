@@ -409,6 +409,95 @@
             font-weight: 700;
         }
 
+        /* Content Box */
+        .content-box {
+            background: var(--bg-light);
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 35px 40px;
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .content-box h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--green-dark);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .content-box h3::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--green);
+            border-radius: 50%;
+        }
+
+        .content-box p {
+            color: var(--text-gray);
+            margin-bottom: 15px;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .content-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Note Box */
+        .note-box {
+            background: var(--green-light);
+            border-left: 4px solid var(--green);
+            padding: 25px 30px;
+            border-radius: 0 16px 16px 0;
+            margin: 40px 0;
+        }
+
+        .note-box p {
+            color: var(--text-dark);
+            margin: 10px 0;
+            font-size: 0.95rem;
+        }
+
+        /* Why Section */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .why-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 35px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .why-card:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            transform: translateY(-5px);
+        }
+
+        .why-card h3 {
+            color: var(--green-dark);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .why-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
         /* Testimonials - iPhone Screenshot Style */
         .testimonials-section {
             background: var(--bg-light);
@@ -868,15 +957,26 @@
             </div>
         </div>
 
-        <div class="system-box">
-            <h3>Automated Follow-Up System</h3>
-            <p>After they click, leads enter your info on a landing page. They can book instantly, or our automated system texts them reminders until they do. You get notified of every lead and appointment.</p>
-            <div class="system-features">
-                <span class="system-feature">Auto-Text Follow-Ups</span>
-                <span class="system-feature">Calendar Booking</span>
-                <span class="system-feature">Appointment Reminders</span>
-                <span class="system-feature">Lead Notifications</span>
-            </div>
+        <div class="content-box">
+            <h3>Landing Page</h3>
+            <p>After a person clicks on your ad, they'll go to the landing page where they'll enter their name, email address and phone number to book an appointment.</p>
+            <p>You'll receive an email and text message letting you know that you received a lead.</p>
+        </div>
+
+        <div class="content-box">
+            <h3>Thank You Page</h3>
+            <p>This is where the lead will go after they give us their info.</p>
+            <p>I embed your calendar inside of my CRM where they have the option to book an appointment.</p>
+            <p>If they don't book an appointment, they'll get thrown into our automated follow-up texting system and receive a text of the link to your calendar so they can book at a later time.</p>
+            <p>I'll continue to send a variety of messages for 5 days or until they either say stop or do book an appointment.</p>
+            <p>When they book an appointment, you'll receive an email and text message of their name, email address, phone number, time and date they chose.</p>
+            <p>Your lead/appointment will receive a confirmation + reminders: 14 day, 7 day, 3 day, 24 hour, and 2 hour.</p>
+            <p><strong>Everything is customizable to your wants and needs.</strong></p>
+        </div>
+
+        <div class="content-box">
+            <h3>Follow-Up</h3>
+            <p>I only recommend following up with those who do book an appointment so you can touch base with them and see if they have any questions or concerns.</p>
         </div>
 
         <div class="cta-center">
@@ -884,10 +984,45 @@
         </div>
     </section>
 
+    <!-- Results Section -->
+    <section class="section-alt">
+        <div class="section">
+            <h2 class="section-title">The Results</h2>
+
+            <div class="note-box">
+                <p><strong>Results vary upon how good your market is and competition level.</strong></p>
+                <p>Smaller markets generally work better than larger markets.</p>
+                <p>Suburbs generally work better than downtowns.</p>
+                <p>Places with chiro schools are extremely saturated (Atlanta, Dallas, Davenport, etc).</p>
+            </div>
+
+            <h3 style="text-align: center; color: var(--green-dark); font-size: 1.5rem; margin: 50px 0 20px; font-weight: 800;">Why Google Ads?</h3>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3>High Intent</h3>
+                    <p>Patients are actively searching for help. They NEED you right now. Not scrolling social media.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Perfect Timing</h3>
+                    <p>You show up exactly when they need you most. When they're in pain and looking for relief.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Trackable ROI</h3>
+                    <p>Know exactly what every dollar brings in. No guessing. Real numbers, real patients, real revenue.</p>
+                </div>
+            </div>
+
+            <div class="cta-center">
+                <a href="mailto:sam@getdoctorcalls.com" class="cta-btn">I WANT MORE PATIENTS</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials -->
     <section class="testimonials-section">
         <div class="section" style="padding-top: 0; padding-bottom: 0;">
-            <h2 class="section-title">Real Results From Real Doctors</h2>
+            <h2 class="section-title">Client Results</h2>
             <p class="section-subtitle">Actual text messages from clients. No fake testimonials.</p>
         </div>
 
@@ -966,6 +1101,84 @@
                     <div class="imessage-time">Last month</div>
                     <div class="imessage-bubble">
                         <p><strong>Just bought my first Porsche today.</strong> Thanks for the help!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="iphone-screenshot">
+                <div class="iphone-screen">
+                    <div class="imessage-header">
+                        <div class="imessage-avatar">DC</div>
+                        <span class="imessage-name">Chiro Client</span>
+                    </div>
+                    <div class="imessage-time">Last week</div>
+                    <div class="imessage-bubble">
+                        <p>Between Google ads, referrals and your leads we collected <strong>$100k last week. 100k in 5 days bro. Insane.</strong> We appreciate you and the amazing service you give! Let's keep growing!!!!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="iphone-screenshot">
+                <div class="iphone-screen">
+                    <div class="imessage-header">
+                        <div class="imessage-avatar">DC</div>
+                        <span class="imessage-name">Chiro Client</span>
+                    </div>
+                    <div class="imessage-time">2 weeks ago</div>
+                    <div class="imessage-bubble">
+                        <p>Bro idk what i was even thinking taking a month off. <strong>your ads are like magic.</strong> We have been so busy. Crushing it these past two weeks my team has been running. Keep up the great work!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="iphone-screenshot">
+                <div class="iphone-screen">
+                    <div class="imessage-header">
+                        <div class="imessage-avatar">DC</div>
+                        <span class="imessage-name">Chiro Client</span>
+                    </div>
+                    <div class="imessage-time">This month</div>
+                    <div class="imessage-bubble">
+                        <p>We've consistently made <strong>$100k plus a month</strong> this year</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="iphone-screenshot">
+                <div class="iphone-screen">
+                    <div class="imessage-header">
+                        <div class="imessage-avatar">DC</div>
+                        <span class="imessage-name">Chiro Client</span>
+                    </div>
+                    <div class="imessage-time">Last month</div>
+                    <div class="imessage-bubble">
+                        <p>Had a few 100k months last year and <strong>broke 1 mill last year...</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="iphone-screenshot">
+                <div class="iphone-screen">
+                    <div class="imessage-header">
+                        <div class="imessage-avatar">DC</div>
+                        <span class="imessage-name">Chiro Client</span>
+                    </div>
+                    <div class="imessage-time">Last week</div>
+                    <div class="imessage-bubble">
+                        <p>We had our <strong>best week ever</strong> last week! We also made more money last week than we did all of December!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="iphone-screenshot">
+                <div class="iphone-screen">
+                    <div class="imessage-header">
+                        <div class="imessage-avatar">DC</div>
+                        <span class="imessage-name">Chiro Client</span>
+                    </div>
+                    <div class="imessage-time">Yesterday</div>
+                    <div class="imessage-bubble">
+                        <p>Anyway we set a <strong>new record in patient visits</strong> this week and a <strong>new record for patient visits in a day</strong> yesterday</p>
                     </div>
                 </div>
             </div>
