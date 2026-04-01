@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Doctor Calls - Google Ads for Chiropractors, Dentists & Med Spas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: #4ade80;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .highlight {
+            color: #4ade80;
+        }
+
+        /* CTA Button */
+        .cta-btn {
+            display: inline-block;
+            background: #4ade80;
+            color: #000;
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding: 20px 50px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin: 30px 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(74, 222, 128, 0.4);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(74, 222, 128, 0.5);
+        }
+
+        /* Section */
+        .section {
+            padding: 60px 20px;
+        }
+
+        .section-dark {
+            background: #1a1a2e;
+            color: #fff;
+        }
+
+        .section-light {
+            background: #f8f9fa;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #4ade80;
+        }
+
+        .section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #4ade80;
+        }
+
+        /* Process Grid */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .process-card {
+            background: #16213e;
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid #4ade80;
+        }
+
+        .process-card h4 {
+            font-size: 1.3rem;
+            color: #4ade80;
+            margin-bottom: 15px;
+        }
+
+        .process-card p {
+            color: #ccc;
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .testimonial {
+            background: #1a1a2e;
+            border-radius: 20px;
+            padding: 25px;
+            color: #fff;
+        }
+
+        .testimonial-bubble {
+            background: #333;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .testimonial-bubble p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-reaction {
+            text-align: right;
+            font-size: 1.5rem;
+        }
+
+        /* Pricing */
+        .pricing-box {
+            background: #16213e;
+            border: 3px solid #4ade80;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pricing-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #333;
+            font-size: 1.1rem;
+        }
+
+        .price-item:last-child {
+            border-bottom: none;
+        }
+
+        .price {
+            color: #4ade80;
+            font-weight: 700;
+        }
+
+        .no-contract {
+            background: #4ade80;
+            color: #000;
+            display: inline-block;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .stat {
+            padding: 30px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #4ade80;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        /* Platform Icons */
+        .platforms {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .platform-icon {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f0f1a;
+            color: #888;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer a {
+            color: #4ade80;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Bonus Section */
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .bonus-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .bonus-card h4 {
+            color: #1a1a2e;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .bonus-card p {
+            color: #666;
+        }
+
+        /* Text content styling */
+        .content-block {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .content-block p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Results section */
+        .results-note {
+            background: #f0fdf4;
+            border-left: 4px solid #4ade80;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .results-note p {
+            margin: 10px 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>HEY DOC</h1>
+            <h2>MY NAME IS SAM HABIB AND I RUN <span class="highlight">GOOGLE ADS</span> FOR CHIROPRACTORS, DENTISTS & MED SPAS TO GET THEM NEW PATIENTS</h2>
+            <p>I CREATED AN AUTOMATED BOOKING/TEXTING FOLLOW-UP SYSTEM AND CURRENTLY WORK WITH PRACTICES ACROSS THE COUNTRY</p>
+            <p>YOU ONLY DEAL WITH ME, I DON'T DO CONTRACTS AND I DON'T HIRE PEOPLE FROM OVERSEAS TO RUN YOUR ADS</p>
+            <p>MY SYSTEM HAS GENERATED <span class="highlight">THOUSANDS OF NEW PATIENTS</span> AND <span class="highlight">MILLIONS IN REVENUE</span> FOR MY CLIENTS</p>
+
+            <a href="#contact" class="cta-btn">I WANT MORE PATIENTS!</a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-number">12.46%</div>
+                    <div class="stat-label">Conversion Rate</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">$3.22M</div>
+                    <div class="stat-label">Won Revenue</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">70+</div>
+                    <div class="stat-label">Practices Served</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <h2>1. THE PROCESS</h2>
+            <h3 style="text-align: center; margin-bottom: 30px;">GOOGLE ADS</h3>
+
+            <div class="process-grid">
+                <div class="process-card">
+                    <h4>SEARCH ADS</h4>
+                    <p>When someone searches "chiropractor near me" or "back pain relief" - YOUR practice shows up first. High-intent patients actively looking for help RIGHT NOW.</p>
+                </div>
+                <div class="process-card">
+                    <h4>MAP ADS</h4>
+                    <p>Your practice pinned at the top of Google Maps. When patients search locally, you're the first thing they see with reviews, directions, and click-to-call.</p>
+                </div>
+                <div class="process-card">
+                    <h4>LOCAL SERVICE ADS</h4>
+                    <p>Google Guaranteed badge. You only pay when someone actually calls. Shows above everything else and builds instant trust.</p>
+                </div>
+                <div class="process-card">
+                    <h4>YOUTUBE ADS</h4>
+                    <p>Video ads targeting people in your area watching health content. Scripted testimonial or before/after adjustment - I provide the script.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#contact" class="cta-btn">I WANT MORE PATIENTS!</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Landing Page Process -->
+    <section class="section">
+        <div class="container">
+            <div class="content-block">
+                <h3 style="color: #4ade80; margin-bottom: 20px;">LANDING PAGE</h3>
+                <p>AFTER A PERSON CLICKS ON YOUR AD, THEY'LL GO TO THE LANDING PAGE WHERE THEY'LL ENTER THEIR NAME, EMAIL ADDRESS AND PHONE NUMBER TO BOOK AN APPOINTMENT</p>
+                <p>YOU'LL RECEIVE AN EMAIL AND TEXT MESSAGE LETTING YOU KNOW THAT YOU RECEIVED A LEAD</p>
+
+                <h3 style="color: #4ade80; margin: 30px 0 20px;">THANK YOU PAGE</h3>
+                <p>THIS IS WHERE THE LEAD WILL GO AFTER THEY GIVE US THEIR INFO</p>
+                <p>I EMBED YOUR CALENDAR INSIDE OF MY CRM WHERE THEY HAVE THE OPTION TO BOOK AN APPOINTMENT</p>
+                <p>IF THEY DON'T BOOK AN APPOINTMENT, THEY'LL GET THROWN INTO OUR AUTOMATED FOLLOW-UP TEXTING SYSTEM AND RECEIVE A TEXT OF THE LINK TO YOUR CALENDAR SO THEY CAN BOOK AT A LATER TIME</p>
+                <p>I'LL CONTINUE TO SEND A VARIETY OF MESSAGES FOR 5 DAYS OR UNTIL THEY EITHER SAY STOP OR DO BOOK AN APPOINTMENT</p>
+                <p>WHEN THEY BOOK AN APPOINTMENT, YOU'LL RECEIVE AN EMAIL AND TEXT MESSAGE OF THEIR NAME, EMAIL ADDRESS, PHONE NUMBER, TIME AND DATE THEY CHOSE</p>
+                <p>YOUR LEAD/APPOINTMENT WILL RECEIVE A CONFIRMATION OF THE TIME AND DATE THEY CHOSE AND ALSO A 14 DAY REMINDER, 7 DAY REMINDER, 3 DAY REMINDER, 24 HOUR REMINDER AND A 2 HOUR REMINDER</p>
+                <p>EVERYTHING IS CUSTOMIZABLE TO YOUR WANTS AND NEEDS</p>
+
+                <h3 style="color: #4ade80; margin: 30px 0 20px;">FOLLOW-UP</h3>
+                <p>I ONLY RECOMMEND FOLLOWING UP WITH THOSE WHO DO BOOK AN APPOINTMENT SO YOU CAN TOUCH BASE WITH THEM AND SEE IF THEY HAVE ANY QUESTIONS OR CONCERNS</p>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="#contact" class="cta-btn">I WANT MORE PATIENTS!</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <h2>2. THE RESULTS</h2>
+
+            <div class="results-note" style="background: #16213e; border-left-color: #4ade80;">
+                <p style="color: #fff;">RESULTS VARY UPON HOW GOOD YOUR MARKET IS AND COMPETITION LEVEL</p>
+                <p style="color: #ccc;">SMALLER MARKETS GENERALLY WORK BETTER THAN LARGER MARKETS</p>
+                <p style="color: #ccc;">SUBURBS GENERALLY WORK BETTER THAN DOWNTOWNS</p>
+                <p style="color: #ccc;">PLACES WITH CHIRO SCHOOLS ARE EXTREMELY SATURATED (ATLANTA, DALLAS, DAVENPORT, ETC)</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <h3>WHY GOOGLE ADS?</h3>
+                <div class="process-grid" style="margin-top: 30px;">
+                    <div class="process-card">
+                        <h4>HIGH INTENT</h4>
+                        <p>Patients are actively searching for help. They NEED you right now.</p>
+                    </div>
+                    <div class="process-card">
+                        <h4>PERFECT TIMING</h4>
+                        <p>You show up exactly when they need you most.</p>
+                    </div>
+                    <div class="process-card">
+                        <h4>TRACKABLE ROI</h4>
+                        <p>Know exactly what every dollar brings in. No guessing.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#contact" class="cta-btn">I WANT MORE PATIENTS!</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section section-light">
+        <div class="container">
+            <h2 style="color: #1a1a2e;">CLIENT RESULTS</h2>
+
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-bubble">
+                        <p>"Just passed 100k this month so THANK YOU!! Very appreciate of all your work and how you have impacted our business in such a short time"</p>
+                    </div>
+                    <div class="testimonial-reaction">❤️</div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-bubble">
+                        <p>"Just hit 6 figures for the month! Been crazy busy these last 3/4 weeks!"</p>
+                    </div>
+                    <div class="testimonial-reaction">🇺🇸</div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-bubble">
+                        <p>"Last week we had 476 visits. Record week. On track for a 7 figure revenue year, largely because of all of the extra new patients from your ads! Thanks brother"</p>
+                    </div>
+                    <div class="testimonial-reaction">👍</div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-bubble">
+                        <p>"We saw 118 new patients in April, of which 41 came from your ads. So far 64% of them have started care...approximately $50k+ not including the many referrals"</p>
+                    </div>
+                    <div class="testimonial-reaction">🙌</div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-bubble">
+                        <p>"After talking with a friend this weekend I realized I hit my 3 year financial goals in 1 year. That's because of you bro. Thank you!"</p>
+                    </div>
+                    <div class="testimonial-reaction">😎</div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-bubble">
+                        <p>"Between Google ads, referrals and your leads we collected $100k last week. 100k in 5 days bro. Insane. We appreciate you!"</p>
+                    </div>
+                    <div class="testimonial-reaction">😳</div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-bubble">
+                        <p>"Bro idk what i was even thinking taking a month off. your ads are like magic. We have been so busy. Crushing it these past two weeks!"</p>
+                    </div>
+                    <div class="testimonial-reaction">❤️</div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-bubble">
+                        <p>"We've consistently made $100k plus a month this year"</p>
+                    </div>
+                    <div class="testimonial-reaction">🤩</div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-bubble">
+                        <p>"Had a few 100k months last year and broke 1 mill last year..."</p>
+                    </div>
+                    <div class="testimonial-reaction">😳</div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-bubble">
+                        <p>"Just bought my first Porsche today. Thanks for the help!"</p>
+                    </div>
+                    <div class="testimonial-reaction">❤️</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section section-dark" id="pricing">
+        <div class="container">
+            <h2>3. THE PRICE</h2>
+
+            <div style="text-align: center; margin-bottom: 40px;">
+                <span class="no-contract">I DO NOT DO CONTRACTS</span>
+                <p style="margin-top: 15px; color: #ccc;">I DO NOT CHARGE A SETUP FEE</p>
+            </div>
+
+            <div class="pricing-box">
+                <h3>1 OFFICE PER MONTH</h3>
+                <div class="price-item">
+                    <span>GOOGLE ADS (SEARCH + MAPS + LSA)</span>
+                    <span class="price">$1,750</span>
+                </div>
+                <div class="price-item">
+                    <span>GOOGLE ADS + YOUTUBE</span>
+                    <span class="price">$2,500</span>
+                </div>
+
+                <h3 style="margin-top: 40px;">2 OR MORE OFFICES PER MONTH</h3>
+                <div class="price-item">
+                    <span>GOOGLE ADS (SEARCH + MAPS + LSA)</span>
+                    <span class="price">$1,250</span>
+                </div>
+                <div class="price-item">
+                    <span>GOOGLE ADS + YOUTUBE</span>
+                    <span class="price">$1,500</span>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px; color: #ccc;">
+                <p>I RECOMMEND AT MINIMUM $50 PER DAY ($1,500 PER MONTH) IN AD SPEND</p>
+                <p style="margin-top: 15px;">I HAVE CLIENTS THAT HAVE SCALED UP TO $15,000+, SO IF YOU WANT TO SPEND MORE, YOU'LL GROW MORE</p>
+                <p style="margin-top: 15px;">AD SPEND IS CHARGED DIRECTLY BY GOOGLE - NOT BILLED UP FRONT</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#contact" class="cta-btn">I WANT MORE PATIENTS!</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bonuses Section -->
+    <section class="section section-light">
+        <div class="container">
+            <h2 style="color: #1a1a2e;">4. BONUSES</h2>
+
+            <div class="bonus-grid">
+                <div class="bonus-card">
+                    <h4>CLIENT GROUP</h4>
+                    <p>I'LL ADD YOU TO MY PRIVATE GROUP WITH OTHER DOCTORS AND THEIR TEAM MEMBERS</p>
+                </div>
+                <div class="bonus-card">
+                    <h4>REFERRAL PROGRAM</h4>
+                    <p>$500 REFERRAL COMMISSION IF THE PERSON YOU REFERRED BECOMES A CLIENT</p>
+                </div>
+                <div class="bonus-card">
+                    <h4>CRM ACCESS</h4>
+                    <p>A CUSTOMIZED CRM THAT ALLOWS US TO AUTO TEXT AND AUTO BOOK NEW PATIENTS. TRACK YOUR STATS, ROI AND SEE ALL CONVERSATIONS.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section section-dark" id="contact">
+        <div class="container" style="text-align: center;">
+            <h2>READY TO GET STARTED?</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 30px; color: #ccc;">IF YOU HAVE ANY QUESTIONS, EMAIL ME</p>
+            <a href="mailto:sam@getdoctorcalls.com" style="color: #4ade80; font-size: 2rem; text-decoration: none; font-weight: 700;">SAM@GETDOCTORCALLS.COM</a>
+
+            <div style="margin-top: 50px;">
+                <a href="mailto:sam@getdoctorcalls.com" class="cta-btn">I WANT MORE PATIENTS!</a>
+            </div>
+
+            <p style="margin-top: 40px; color: #888;">THANK YOU AND I LOOK FORWARD TO HEARING FROM YOU!</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>COPYRIGHT 2026 @ GETDOCTORCALLS.COM</p>
+    </footer>
+
+</body>
+</html>

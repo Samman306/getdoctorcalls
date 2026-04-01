@@ -1,0 +1,12 @@
+{
+  "name": "getdoctorcalls",
+  "version": "1.0.0",
+  "description": "Google Ads for Chiropractors, Dentists & Med Spas",
+  "scripts": {
+    "start": "serve .",
+    "build": "echo 'Static site - no build needed'"
+  },
+  "keywords": ["google ads", "chiropractor", "dentist", "healthcare marketing"],
+  "author": "Sam Habib",
+  "license": "ISC"
+}
