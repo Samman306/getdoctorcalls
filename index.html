@@ -612,6 +612,95 @@
             font-size: 0.9rem;
             color: #aaa;
         }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: var(--dark-card);
+            border: 2px solid var(--green);
+            border-radius: 24px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 90vh;
+            overflow: hidden;
+            position: relative;
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            color: var(--gray);
+            cursor: pointer;
+            transition: color 0.3s ease;
+            z-index: 10;
+        }
+
+        .modal-close:hover {
+            color: var(--green);
+        }
+
+        .modal-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--green);
+            text-align: center;
+            padding: 30px 20px 10px;
+            letter-spacing: 2px;
+        }
+
+        .modal-subtitle {
+            color: var(--gray);
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .calendar-container {
+            padding: 0 20px 20px;
+            background: #fff;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .calendar-container iframe {
+            border-radius: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                max-height: 95vh;
+            }
+
+            .calendar-container iframe {
+                height: 500px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -624,7 +713,7 @@
             <p class="hero-text">I CREATED AN AUTOMATED BOOKING/TEXTING FOLLOW-UP SYSTEM AND CURRENTLY WORK WITH PRACTICES ACROSS THE COUNTRY</p>
             <p class="hero-text">YOU ONLY DEAL WITH ME, I DON'T DO CONTRACTS AND I DON'T HIRE PEOPLE FROM OVERSEAS TO RUN YOUR ADS</p>
             <p class="hero-text">MY SYSTEM HAS GENERATED <span class="highlight">THOUSANDS OF NEW PATIENTS</span> AND <span class="highlight">MILLIONS IN REVENUE</span> FOR MY CLIENTS</p>
-            <a href="https://calendar.google.com" class="cta-btn">I WANT MORE PATIENTS!</a>
+            <a href="javascript:void(0)" onclick="openModal()" class="cta-btn">I WANT MORE PATIENTS!</a>
         </div>
     </section>
 
@@ -695,16 +784,34 @@
                     <h3>MORE ADS</h3>
                 </div>
                 <div class="platform-logos">
+                    <!-- YouTube -->
                     <svg height="24" viewBox="0 0 24 24" fill="#FF0000" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <!-- Facebook -->
                     <svg height="24" viewBox="0 0 24 24" fill="#1877F2" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    <svg height="24" viewBox="0 0 24 24" fill="#FFFC00" xmlns="http://www.w3.org/2000/svg"><path d="M12.166.053C5.85.053.679 5.224.679 11.54c0 6.317 5.172 11.488 11.487 11.488 6.316 0 11.488-5.171 11.488-11.488C23.654 5.224 18.482.053 12.166.053zm5.37 8.005c.312 2.284-.336 4.213-1.898 5.77-1.563 1.559-3.493 2.206-5.778 1.895-.312-.044-.466.066-.621.333-.866 1.508-1.754 3.004-2.62 4.512-.133.222-.266.4-.532.488-.4.133-.8-.022-.954-.4-.089-.222-.044-.466.089-.688.91-1.574 1.831-3.137 2.742-4.712.177-.31.088-.465-.222-.576-2.263-.843-3.693-2.386-4.29-4.712-.598-2.327-.044-4.39 1.453-6.162 2.085-2.462 5.393-3.16 8.21-1.763 2.241 1.108 3.56 2.949 3.87 5.404.067.533.089 1.075.178 1.608.022.134.11.29.221.378.4.31.821.598 1.242.888.355.244.532.576.532 1.02 0 .443-.177.776-.532 1.02-.421.29-.843.577-1.242.888-.11.088-.2.244-.221.377-.089.533-.111 1.076-.178 1.608-.31 2.462-1.629 4.302-3.87 5.404-2.817 1.397-6.125.699-8.21-1.763-1.497-1.773-2.051-3.835-1.453-6.162.597-2.326 2.027-3.869 4.29-4.712.31-.11.399-.266.222-.576-.911-1.575-1.832-3.138-2.742-4.712-.133-.222-.178-.466-.089-.688.155-.378.555-.533.954-.4.266.089.399.267.532.489.866 1.507 1.754 3.004 2.62 4.511.155.267.31.378.621.333z"/></svg>
+                    <!-- Instagram -->
+                    <svg height="24" viewBox="0 0 24 24" fill="url(#instagram-gradient)" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="instagram-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#FFDC80"/>
+                                <stop offset="25%" style="stop-color:#F77737"/>
+                                <stop offset="50%" style="stop-color:#E1306C"/>
+                                <stop offset="75%" style="stop-color:#C13584"/>
+                                <stop offset="100%" style="stop-color:#833AB4"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                    </svg>
+                    <!-- Snapchat -->
+                    <svg height="24" viewBox="0 0 24 24" fill="#FFFC00" xmlns="http://www.w3.org/2000/svg"><path d="M12.206.793c.99 0 4.347.276 5.93 3.821.529 1.193.403 3.219.299 4.847l-.003.06c-.012.18-.022.345-.03.51.075.045.203.09.401.09.3-.016.659-.12 1.033-.301.165-.088.344-.104.464-.104.182 0 .359.029.509.09.45.149.734.479.734.838.015.449-.39.839-1.213 1.168-.089.029-.209.075-.344.119-.45.135-1.139.36-1.333.81-.09.224-.061.524.12.868l.015.015c.06.136 1.526 3.475 4.791 4.014.255.044.435.27.42.509 0 .075-.015.149-.045.225-.24.569-1.273.988-3.146 1.271-.059.091-.12.375-.164.57-.029.179-.074.36-.134.553-.076.271-.27.405-.555.405h-.03c-.135 0-.313-.031-.538-.074-.36-.075-.765-.135-1.273-.135-.3 0-.599.015-.913.074-.6.104-1.123.464-1.723.884-.853.599-1.826 1.288-3.294 1.288-.06 0-.119-.015-.18-.015h-.149c-1.468 0-2.427-.675-3.279-1.288-.599-.42-1.107-.779-1.707-.884-.314-.045-.629-.074-.928-.074-.509 0-.905.06-1.274.134-.209.045-.405.074-.539.074h-.044c-.314 0-.494-.149-.569-.42-.061-.18-.105-.359-.135-.538-.046-.206-.105-.465-.165-.571-1.857-.284-2.891-.703-3.131-1.271a.573.573 0 0 1-.044-.224c-.015-.24.164-.465.419-.509 3.264-.54 4.73-3.879 4.791-4.02l.016-.029c.18-.345.224-.645.119-.869-.195-.434-.884-.658-1.332-.809a3.72 3.72 0 0 1-.346-.12c-.823-.315-1.228-.72-1.212-1.168 0-.36.284-.69.733-.839.165-.061.344-.09.524-.09.12 0 .284.015.449.104.39.18.732.3 1.018.3.22 0 .359-.06.449-.104-.012-.18-.024-.359-.036-.539l-.003-.06c-.104-1.628-.23-3.654.3-4.847C7.86 1.069 11.216.793 12.206.793z"/></svg>
+                    <!-- TikTok -->
+                    <svg height="24" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
                 </div>
-                <p>YouTube, Meta (Facebook/Instagram), and Snapchat ads. <strong>Best for practices with video content ready.</strong> These platforms are content-heavy - we recommend having testimonials or practice videos prepared.</p>
+                <p>YouTube, Facebook, Instagram, Snapchat, and TikTok ads. <strong>Best for practices with video content ready.</strong> These platforms are content-heavy - we recommend having testimonials or practice videos prepared.</p>
             </div>
         </div>
 
         <div style="text-align: center;">
-            <a href="https://calendar.google.com" class="cta-btn">I WANT MORE PATIENTS!</a>
+            <a href="javascript:void(0)" onclick="openModal()" class="cta-btn">I WANT MORE PATIENTS!</a>
         </div>
 
         <div class="content-block">
@@ -786,7 +893,7 @@
         </div>
 
         <div style="text-align: center;">
-            <a href="https://calendar.google.com" class="cta-btn">I WANT MORE PATIENTS!</a>
+            <a href="javascript:void(0)" onclick="openModal()" class="cta-btn">I WANT MORE PATIENTS!</a>
         </div>
     </section>
 
@@ -881,7 +988,7 @@
         </div>
 
         <div style="text-align: center; margin-top: 60px;">
-            <a href="https://calendar.google.com" class="cta-btn">I WANT MORE PATIENTS!</a>
+            <a href="javascript:void(0)" onclick="openModal()" class="cta-btn">I WANT MORE PATIENTS!</a>
         </div>
     </section>
 
@@ -928,7 +1035,7 @@
             </div>
 
             <div style="text-align: center;">
-                <a href="https://calendar.google.com" class="cta-btn">I WANT MORE PATIENTS!</a>
+                <a href="javascript:void(0)" onclick="openModal()" class="cta-btn">I WANT MORE PATIENTS!</a>
             </div>
         </div>
     </section>
@@ -962,7 +1069,7 @@
         <p style="color: var(--gray); font-size: 1.2rem; margin-bottom: 30px;">IF YOU HAVE ANY QUESTIONS, EMAIL ME</p>
         <a href="mailto:sam@getdoctorcalls.com" class="contact-email">SAM@GETDOCTORCALLS.COM</a>
         <br><br>
-        <a href="https://calendar.google.com" class="cta-btn">I WANT MORE PATIENTS!</a>
+        <a href="javascript:void(0)" onclick="openModal()" class="cta-btn">I WANT MORE PATIENTS!</a>
         <p style="color: var(--gray); margin-top: 40px;">THANK YOU AND I LOOK FORWARD TO HEARING FROM YOU!</p>
     </section>
 
@@ -971,10 +1078,55 @@
         <p>COPYRIGHT 2026 @ GETDOCTORCALLS.COM</p>
     </footer>
 
+    <!-- Calendar Modal -->
+    <div id="calendarModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h3 class="modal-title">BOOK YOUR CALL</h3>
+            <p class="modal-subtitle">Pick a time that works for you</p>
+            <div class="calendar-container">
+                <!-- Replace this src with your Google Calendar Appointment Schedule link -->
+                <iframe
+                    src="https://calendar.google.com/calendar/appointments/schedules/YOUR_SCHEDULE_ID?gv=true"
+                    style="border: 0"
+                    width="100%"
+                    height="600"
+                    frameborder="0">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
     <!-- Floating CTA (mobile) -->
-    <a href="https://calendar.google.com" class="cta-btn floating-cta" style="display: none;">GET STARTED</a>
+    <a href="javascript:void(0)" onclick="openModal()" class="cta-btn floating-cta" style="display: none;">GET STARTED</a>
 
     <script>
+        // Modal functions
+        function openModal() {
+            document.getElementById('calendarModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('calendarModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('calendarModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
         // Show floating CTA on scroll
         window.addEventListener('scroll', () => {
             const floatingCta = document.querySelector('.floating-cta');
