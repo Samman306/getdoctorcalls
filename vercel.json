@@ -2,11 +2,35 @@
   "version": 2,
   "builds": [
     {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    },
+    {
       "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "book/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "soliel/index.html",
       "use": "@vercel/static"
     }
   ],
   "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/book/?",
+      "dest": "/book/index.html"
+    },
+    {
+      "src": "/soliel/?",
+      "dest": "/soliel/index.html"
+    },
     {
       "src": "/(.*)",
       "dest": "/index.html"

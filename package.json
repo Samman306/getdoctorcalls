@@ -6,6 +6,9 @@
     "start": "serve .",
     "build": "echo 'Static site - no build needed'"
   },
+  "dependencies": {
+    "googleapis": "^134.0.0"
+  },
   "keywords": ["google ads", "chiropractor", "dentist", "healthcare marketing"],
   "author": "Sam Habib",
   "license": "ISC"
