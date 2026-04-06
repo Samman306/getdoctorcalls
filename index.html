@@ -70,6 +70,9 @@
             max-width: 900px;
             position: relative;
             z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .greeting {
@@ -84,6 +87,7 @@
             font-weight: 600;
             margin-bottom: 30px;
             line-height: 1.5;
+            text-align: center;
         }
 
         .hero-text {
@@ -91,6 +95,9 @@
             color: var(--gray);
             margin-bottom: 15px;
             max-width: 700px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .highlight {
@@ -241,10 +248,22 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
 
+        .process-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .process-card-logo {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+        }
+
         .process-card h3 {
             color: var(--green);
             font-size: 1.3rem;
-            margin-bottom: 15px;
             font-weight: 800;
         }
 
@@ -545,28 +564,19 @@
             50% { box-shadow: 0 0 50px rgba(74, 222, 128, 0.6); }
         }
 
-        /* Platform icons */
-        .platforms {
+        /* Platform Logos Row */
+        .platform-logos {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin: 40px 0;
-            flex-wrap: wrap;
-        }
-
-        .platform-badge {
-            background: #1a1a1a;
-            padding: 15px 30px;
-            border-radius: 10px;
-            display: flex;
             align-items: center;
-            gap: 10px;
-            border: 1px solid #333;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 15px;
         }
 
-        .platform-badge img {
-            width: 30px;
-            height: 30px;
+        .platform-logos img {
+            height: 24px;
+            opacity: 0.8;
         }
 
         /* Divider */
@@ -591,6 +601,17 @@
             color: #ccc;
             margin: 10px 0;
         }
+
+        /* Small note */
+        .small-note {
+            background: rgba(74, 222, 128, 0.05);
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
     </style>
 </head>
 <body>
@@ -603,7 +624,7 @@
             <p class="hero-text">I CREATED AN AUTOMATED BOOKING/TEXTING FOLLOW-UP SYSTEM AND CURRENTLY WORK WITH PRACTICES ACROSS THE COUNTRY</p>
             <p class="hero-text">YOU ONLY DEAL WITH ME, I DON'T DO CONTRACTS AND I DON'T HIRE PEOPLE FROM OVERSEAS TO RUN YOUR ADS</p>
             <p class="hero-text">MY SYSTEM HAS GENERATED <span class="highlight">THOUSANDS OF NEW PATIENTS</span> AND <span class="highlight">MILLIONS IN REVENUE</span> FOR MY CLIENTS</p>
-            <a href="#contact" class="cta-btn">I WANT MORE PATIENTS!</a>
+            <a href="https://calendar.google.com" class="cta-btn">I WANT MORE PATIENTS!</a>
         </div>
     </section>
 
@@ -638,47 +659,76 @@
 
         <div class="process-grid">
             <div class="process-card">
-                <h3>SEARCH ADS</h3>
+                <div class="process-card-header">
+                    <svg class="process-card-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                    </svg>
+                    <h3>GOOGLE SEARCH ADS</h3>
+                </div>
                 <p>When someone searches "chiropractor near me" or "back pain relief" - YOUR practice shows up first. High-intent patients actively looking for help RIGHT NOW.</p>
             </div>
             <div class="process-card">
-                <h3>MAP ADS</h3>
+                <div class="process-card-header">
+                    <svg class="process-card-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#EA4335"/>
+                        <circle cx="12" cy="9" r="2.5" fill="#fff"/>
+                    </svg>
+                    <h3>GOOGLE MAPS ADS</h3>
+                </div>
                 <p>Your practice pinned at the top of Google Maps. When patients search locally, you're the first thing they see with reviews, directions, and click-to-call.</p>
             </div>
             <div class="process-card">
-                <h3>LOCAL SERVICE ADS</h3>
+                <div class="process-card-header">
+                    <svg class="process-card-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" fill="#34A853"/>
+                        <path d="M10 17l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" fill="#fff"/>
+                    </svg>
+                    <h3>GOOGLE LOCAL SERVICES ADS</h3>
+                </div>
                 <p>Google Guaranteed badge. You only pay when someone actually calls. Shows above everything else and builds instant trust.</p>
             </div>
             <div class="process-card">
-                <h3>YOUTUBE ADS</h3>
-                <p>Video ads targeting people in your area watching health content. Scripted testimonial or before/after adjustment - I provide the script.</p>
+                <div class="process-card-header">
+                    <h3>MORE ADS</h3>
+                </div>
+                <div class="platform-logos">
+                    <svg height="24" viewBox="0 0 24 24" fill="#FF0000" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <svg height="24" viewBox="0 0 24 24" fill="#1877F2" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    <svg height="24" viewBox="0 0 24 24" fill="#FFFC00" xmlns="http://www.w3.org/2000/svg"><path d="M12.166.053C5.85.053.679 5.224.679 11.54c0 6.317 5.172 11.488 11.487 11.488 6.316 0 11.488-5.171 11.488-11.488C23.654 5.224 18.482.053 12.166.053zm5.37 8.005c.312 2.284-.336 4.213-1.898 5.77-1.563 1.559-3.493 2.206-5.778 1.895-.312-.044-.466.066-.621.333-.866 1.508-1.754 3.004-2.62 4.512-.133.222-.266.4-.532.488-.4.133-.8-.022-.954-.4-.089-.222-.044-.466.089-.688.91-1.574 1.831-3.137 2.742-4.712.177-.31.088-.465-.222-.576-2.263-.843-3.693-2.386-4.29-4.712-.598-2.327-.044-4.39 1.453-6.162 2.085-2.462 5.393-3.16 8.21-1.763 2.241 1.108 3.56 2.949 3.87 5.404.067.533.089 1.075.178 1.608.022.134.11.29.221.378.4.31.821.598 1.242.888.355.244.532.576.532 1.02 0 .443-.177.776-.532 1.02-.421.29-.843.577-1.242.888-.11.088-.2.244-.221.377-.089.533-.111 1.076-.178 1.608-.31 2.462-1.629 4.302-3.87 5.404-2.817 1.397-6.125.699-8.21-1.763-1.497-1.773-2.051-3.835-1.453-6.162.597-2.326 2.027-3.869 4.29-4.712.31-.11.399-.266.222-.576-.911-1.575-1.832-3.138-2.742-4.712-.133-.222-.178-.466-.089-.688.155-.378.555-.533.954-.4.266.089.399.267.532.489.866 1.507 1.754 3.004 2.62 4.511.155.267.31.378.621.333z"/></svg>
+                </div>
+                <p>YouTube, Meta (Facebook/Instagram), and Snapchat ads. <strong>Best for practices with video content ready.</strong> These platforms are content-heavy - we recommend having testimonials or practice videos prepared.</p>
             </div>
         </div>
 
         <div style="text-align: center;">
-            <a href="#contact" class="cta-btn">I WANT MORE PATIENTS!</a>
+            <a href="https://calendar.google.com" class="cta-btn">I WANT MORE PATIENTS!</a>
         </div>
 
         <div class="content-block">
             <h3>LANDING PAGE</h3>
-            <p>AFTER A PERSON CLICKS ON YOUR AD, THEY'LL GO TO THE LANDING PAGE WHERE THEY'LL ENTER THEIR NAME, EMAIL ADDRESS AND PHONE NUMBER TO BOOK AN APPOINTMENT</p>
+            <p>AFTER A PERSON CLICKS ON YOUR AD, THEY'LL GO TO YOUR LANDING PAGE WHERE THEY'LL ENTER THEIR NAME AND EMAIL ADDRESS TO BOOK AN APPOINTMENT</p>
             <p>YOU'LL RECEIVE AN EMAIL AND TEXT MESSAGE LETTING YOU KNOW THAT YOU RECEIVED A LEAD</p>
+            <p>THE LEAD WILL RECEIVE AN EMAIL AND TEXT MESSAGE WITH A BOOKING CALENDAR LINK</p>
+            <p>THE CALENDAR ALLOWS FOR DOUBLE BOOKINGS WITH A DISCLAIMER FOR SUGGESTED WAIT TIMES</p>
         </div>
 
         <div class="content-block">
             <h3>THANK YOU PAGE</h3>
             <p>THIS IS WHERE THE LEAD WILL GO AFTER THEY GIVE US THEIR INFO</p>
-            <p>I EMBED YOUR CALENDAR INSIDE OF MY CRM WHERE THEY HAVE THE OPTION TO BOOK AN APPOINTMENT</p>
-            <p>IF THEY DON'T BOOK AN APPOINTMENT, THEY'LL GET THROWN INTO OUR AUTOMATED FOLLOW-UP TEXTING SYSTEM AND RECEIVE A TEXT OF THE LINK TO YOUR CALENDAR SO THEY CAN BOOK AT A LATER TIME</p>
-            <p>I'LL CONTINUE TO SEND A VARIETY OF MESSAGES FOR 5 DAYS OR UNTIL THEY EITHER SAY STOP OR DO BOOK AN APPOINTMENT</p>
-            <p>WHEN THEY BOOK AN APPOINTMENT, YOU'LL RECEIVE AN EMAIL AND TEXT MESSAGE OF THEIR NAME, EMAIL ADDRESS, PHONE NUMBER, TIME AND DATE THEY CHOSE</p>
+            <p>THIS IS WHERE TRACKING IS UTILIZED - AD PIXELS GET SMARTER AND OPTIMIZE YOUR CAMPAIGNS OVER TIME</p>
+            <p>IF THEY DON'T BOOK AN APPOINTMENT, THEY'LL GO THROUGH AN AUTOMATED FOLLOW-UP TEXTING SYSTEM</p>
+            <p>IF THEY CALL AND YOU DON'T ANSWER, THEY'LL RECEIVE AN AUTOMATED TEXT WITH A BOOKING LINK</p>
             <p>YOUR LEAD/APPOINTMENT WILL RECEIVE A CONFIRMATION + REMINDERS: 14 DAY, 7 DAY, 3 DAY, 24 HOUR, AND 2 HOUR</p>
             <p>EVERYTHING IS CUSTOMIZABLE TO YOUR WANTS AND NEEDS</p>
         </div>
 
         <div class="content-block">
             <h3>FOLLOW-UP</h3>
-            <p>I ONLY RECOMMEND FOLLOWING UP WITH THOSE WHO DO BOOK AN APPOINTMENT SO YOU CAN TOUCH BASE WITH THEM AND SEE IF THEY HAVE ANY QUESTIONS OR CONCERNS</p>
+            <p>I RECOMMEND PERSONALLY FOLLOWING UP WITH THOSE WHO BOOK AN APPOINTMENT TO PREVENT GHOSTING</p>
+            <p>YOU NEED TO CALL THE PEOPLE THAT BOOK APPOINTMENTS SO THEY DON'T GHOST - A QUICK CALL TO CONFIRM GOES A LONG WAY</p>
         </div>
     </section>
 
@@ -712,8 +762,31 @@
             </div>
         </div>
 
+        <div class="divider"></div>
+
+        <h3 style="text-align: center; color: var(--green); font-size: 1.5rem; margin-bottom: 40px;">WHY MORE ADS?</h3>
+
+        <div class="process-grid">
+            <div class="process-card">
+                <h3>MORE LEADS</h3>
+                <p>Expand your reach beyond Google. Capture patients where they spend their time - YouTube, Facebook, Instagram, Snapchat.</p>
+            </div>
+            <div class="process-card">
+                <h3>MORE BRAND RECOGNITION</h3>
+                <p>Stay top of mind with video content. When they're ready to book, they'll remember YOU because they've seen your face.</p>
+            </div>
+            <div class="process-card">
+                <h3>BLENDED MARKETING STRATEGY</h3>
+                <p>A multi-platform approach creates a cohesive brand presence and captures patients at every stage of their journey.</p>
+            </div>
+        </div>
+
+        <div class="small-note">
+            <strong>PRO TIP:</strong> Blended CPCs across multiple platforms actually get you a lower cost per acquisition target. When you diversify your ad spend, you're not competing in just one auction.
+        </div>
+
         <div style="text-align: center;">
-            <a href="#contact" class="cta-btn">I WANT MORE PATIENTS!</a>
+            <a href="https://calendar.google.com" class="cta-btn">I WANT MORE PATIENTS!</a>
         </div>
     </section>
 
@@ -808,7 +881,7 @@
         </div>
 
         <div style="text-align: center; margin-top: 60px;">
-            <a href="#contact" class="cta-btn">I WANT MORE PATIENTS!</a>
+            <a href="https://calendar.google.com" class="cta-btn">I WANT MORE PATIENTS!</a>
         </div>
     </section>
 
@@ -830,7 +903,7 @@
                         <span class="price-amount">$1,750</span>
                     </div>
                     <div class="price-row">
-                        <span class="price-service">GOOGLE ADS + YOUTUBE</span>
+                        <span class="price-service">GOOGLE ADS + MORE ADS</span>
                         <span class="price-amount">$2,500</span>
                     </div>
                 </div>
@@ -842,7 +915,7 @@
                         <span class="price-amount">$1,250</span>
                     </div>
                     <div class="price-row">
-                        <span class="price-service">GOOGLE ADS + YOUTUBE</span>
+                        <span class="price-service">GOOGLE ADS + MORE ADS</span>
                         <span class="price-amount">$1,500</span>
                     </div>
                 </div>
@@ -851,11 +924,11 @@
             <div class="note-box" style="margin-top: 40px;">
                 <p>I RECOMMEND AT MINIMUM $50 PER DAY ($1,500 PER MONTH) IN AD SPEND</p>
                 <p>I HAVE CLIENTS THAT HAVE SCALED UP TO $15,000+, SO IF YOU WANT TO SPEND MORE, YOU'LL GROW MORE</p>
-                <p>AD SPEND IS CHARGED DIRECTLY BY GOOGLE - NOT BILLED UP FRONT</p>
+                <p>AD SPEND IS CHARGED DIRECTLY BY GOOGLE/META/SNAPCHAT - NOT BILLED UP FRONT</p>
             </div>
 
             <div style="text-align: center;">
-                <a href="#contact" class="cta-btn">I WANT MORE PATIENTS!</a>
+                <a href="https://calendar.google.com" class="cta-btn">I WANT MORE PATIENTS!</a>
             </div>
         </div>
     </section>
@@ -866,9 +939,9 @@
 
         <div class="bonuses-grid">
             <div class="bonus-card">
-                <div class="bonus-icon">👥</div>
-                <h4>CLIENT GROUP</h4>
-                <p>I'LL ADD YOU TO MY PRIVATE GROUP WITH OTHER DOCTORS AND THEIR TEAM MEMBERS</p>
+                <div class="bonus-icon">🎓</div>
+                <h4>PRIVATE COURSE</h4>
+                <p>HOW TO CONTACT LEADS AND INCREASE FOLLOW-UP RATES - LEARN THE EXACT SCRIPTS AND TIMING THAT CONVERTS LEADS INTO BOOKED APPOINTMENTS</p>
             </div>
             <div class="bonus-card">
                 <div class="bonus-icon">💰</div>
@@ -889,7 +962,7 @@
         <p style="color: var(--gray); font-size: 1.2rem; margin-bottom: 30px;">IF YOU HAVE ANY QUESTIONS, EMAIL ME</p>
         <a href="mailto:sam@getdoctorcalls.com" class="contact-email">SAM@GETDOCTORCALLS.COM</a>
         <br><br>
-        <a href="mailto:sam@getdoctorcalls.com" class="cta-btn">I WANT MORE PATIENTS!</a>
+        <a href="https://calendar.google.com" class="cta-btn">I WANT MORE PATIENTS!</a>
         <p style="color: var(--gray); margin-top: 40px;">THANK YOU AND I LOOK FORWARD TO HEARING FROM YOU!</p>
     </section>
 
@@ -899,7 +972,7 @@
     </footer>
 
     <!-- Floating CTA (mobile) -->
-    <a href="#contact" class="cta-btn floating-cta" style="display: none;">GET STARTED</a>
+    <a href="https://calendar.google.com" class="cta-btn floating-cta" style="display: none;">GET STARTED</a>
 
     <script>
         // Show floating CTA on scroll
